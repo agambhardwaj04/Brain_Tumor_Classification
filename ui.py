@@ -4,7 +4,7 @@ from PIL import Image
 import streamlit as st
 import joblib
 from tensorflow.keras.models import load_model
-model = load_model('brain_tumor_model.h5')
+model = load_model('brain_tumor_models.h5')
 
 
 # Set the app title
@@ -13,7 +13,7 @@ st.set_page_config(page_title="Brain Tumor Detection", layout="wide")
 # Sidebar navigation
 st.sidebar.title("🧭 Navigation")
 st.sidebar.title('🧠 Brain Tumor Detection App')
-page = st.sidebar.selectbox("Go to", ["🌐 Home", "🔍 Detection", "About", "📬 Contact"])
+page = st.sidebar.selectbox("Go to", ["🌐 Home", "🔍 Detection", "ℹ️ About", "📬 Contact"])
 
 # CSS for styled image (for Home page)
 st.markdown("""
@@ -121,7 +121,7 @@ elif page == "🔍 Detection":
             st.success(f"✅ No Tumor Detected with confidence {1-prediction:.2f}")
 
 
-elif page == "About":
+elif page == " ℹ️ About":
     st.title("ℹ️ About")
     st.write("""
         This application uses deep learning techniques to help detect brain tumors from MRI scans.
