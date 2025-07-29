@@ -12,7 +12,7 @@ It is designed to assist radiologists and improve diagnostic accuracy.
 🖥️ Clean and interactive UI
 
 🧪 Model Highlights
-🔍 Architecture: Convolutional Neural Network (CNN)
+🔍 Architecture: VGG19
 
 🖼️ Input Size: 150×150 pixels
 
@@ -26,4 +26,4 @@ It is not a substitute for professional medical diagnosis.
 
 👨‍💻 Developer: Agam Bhardwaj
 📧 Email: bhardwajagam62@gmail.com
-💻 GitHub: (link if available)
+💻 GitHub: https://github.com/agambhardwaj04/Brain_Tumor_Classification
