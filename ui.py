@@ -189,9 +189,12 @@ elif page == "📊 Dataset Analysis":
     st.write("The model has been trained to recognize patterns associated with brain tumors, improving its accuracy over time.")
     st.write("This dataset is taken from Kaggle and contains 4600 images of brain MRI scans, with 2087 images labeled as 'No Tumor' and 2513 images labeled as 'Tumor'.")
     st.write('Dataset Link: [Brain MRI Images for Brain Tumor Detection] https://www.kaggle.com/datasets/preetviradiya/brian-tumor-dataset')
-    st.image("./Images/dataset_number.png", caption="Example MRI Image from Dataset", use_container_width=True)
-    st.image("./Images/data_analysis.png", caption="Example MRI Image from Dataset", use_container_width=True)
-    st.image("./Images/ROC_Curve.png", caption="Example MRI Image from Dataset", use_container_width=True)
+    st.subheader("📈 Dataset Statistics")
+    st.image("./Images/dataset_number.png", caption="Number of Tumor/No Tumor Images", use_container_width=True)
+    st.subheader("🎯 Accuracy, Performance and Loss")
+    st.image("./Images/data_analysis.png", caption="Model Accuracy over Epochs and Loss over Epochs", use_container_width=True)
+    st.subheader("📊 ROC Curve")
+    st.image("./Images/ROC_Curve.png", caption="ROC Curve", use_container_width=True)
 
 
 elif page == "ℹ️ About":
@@ -200,6 +203,52 @@ elif page == "ℹ️ About":
         This application uses deep learning techniques to help detect brain tumors from MRI scans.
         It is designed to assist radiologists and improve diagnostic accuracy.
     """)
+    st.markdown("""
+    <style>
+    .about-title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #4CAF50;
+    }
+    .section-header {
+        font-size: 24px;
+        color: #FF5722;
+        margin-top: 20px;
+    }
+  .connect-header {
+        font-size: 24px;
+        color: #0000FF;
+    }
+    .content-text {
+        font-size: 16px;
+        text-align: justify;
+    }
+    .contact {
+        font-size: 18px;
+        font-weight: bold;
+        color: #2196F3;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Title
+    st.markdown('<p class="about-title">ℹ️ Brain Tumor Detection App</p>', unsafe_allow_html=True)
+
+# App Description
+    st.markdown('<p class="content-text">The Brain Tumor Detection App is an AI-powered tool designed to assist in identifying brain tumors from MRI images. It uses deep learning models (VGG19) trained on MRI datasets to classify images as Tumor or No Tumor with high accuracy.</p>', unsafe_allow_html=True)
+
+# Developer Section
+    st.markdown('<p class="section-header">👤 About the Developer</p>', unsafe_allow_html=True)
+    st.markdown('<p class="content-text"><b>Agam Bhardwaj</b><br>'
+            '🎓 Pursuing <b>Electronics & Computer Engineering</b> at <b>Guru Nanak Dev University (GNDU)</b><br>'
+            '💡 Passionate about <b>Machine Learning</b>, <b>Deep Learning</b>, and their applications in <b>Healthcare AI</b><br>'
+            '🚀 Focused on creating impactful projects that combine technology with real-world benefits.<br>'
+            '🌐 Keen interest in <b>Web Development</b>, building intelligent and interactive web applications.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="connect-header">🤝 Let\'s Connect</p>', unsafe_allow_html=True)
+    st.write("Feel free to connect with me on LinkedIn or GitHub for collaboration, feedback, or inquiries.")
+    st.markdown('<p class="contact">📧 Email: <a href="mailto:bhardwajagam62@gmail.com">bhardwajagam62@gmail.com</a></p>', unsafe_allow_html=True)
+    st.markdown('<p class="contact">🔗 LinkedIn: <a href="https://www.linkedin.com/in/agam-bhardwaj-530b87278/">Agam Bhardwaj</a></p>', unsafe_allow_html=True)
+    st.markdown('<p class="contact">🐙 Github: <a href="https://github.com/agambhardwaj04">Github-Agam Bhardwaj</a></p>', unsafe_allow_html=True)
 
 elif page == "📬 Contact":
     st.title("📬 Contact")
