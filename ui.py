@@ -143,10 +143,12 @@ if page == "🌐 Home":
 
     with st.expander('💻 How to use this Website ?'):
       st.write("""
-      1. **Upload Image**: Click on the "Upload Image" button to select a brain MRI image from your device.
-      2. **View Results**: After uploading, the app will process the image and display the results, indicating whether a tumor is detected and providing additional information.
-      3. **Interpretation**: The results will tell you have a tumor present or not
-      4. **Feedback**: You can provide feedback on the accuracy of the detection to help improve the model.
+      1. **Navigate**: Open the Sidebar by clicking on the arrows on the top-left corner of this page. Use the sidebar to navigate through different sections of the app.
+      2. **Detection**: Go to the "🔍 Detection" page to upload
+      3. **Upload Image**: Click on the "Upload Image" button to select a brain MRI image from your device.
+      4. **View Results**: After uploading, the app will process the image and display the results, indicating whether a tumor is detected and providing additional information.
+      5. **Interpretation**: The results will tell you have a tumor present or not
+      6. **Feedback**: You can provide feedback on the accuracy of the detection to help improve the model and find our Contact Information at Contact Page.
     """)
     with st.expander('💡 Example of the Image used for Brain Tumor Detection'):
            st.write("Below is an example of a brain MRI image used for tumor detection:")
@@ -213,11 +215,13 @@ elif page == "ℹ️ About":
     .section-header {
         font-size: 24px;
         color: #FF5722;
+        font-weight: bold;
         margin-top: 20px;
     }
   .connect-header {
         font-size: 24px;
-        color: #0000FF;
+        font-weight: bold;
+        color: #4169E1;
     }
     .content-text {
         font-size: 16px;
