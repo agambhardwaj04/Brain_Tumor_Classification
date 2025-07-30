@@ -6,7 +6,6 @@ import streamlit as st
 import joblib
 from tensorflow.keras.models import load_model
 # from huggingface_hub import hf_hub_download
-from tensorflow.keras.models import load_model
 import tensorflow as tf
 
 
@@ -19,7 +18,7 @@ import tensorflow as tf
 use_tflite = True  # Change to False if you want to use .h5 model
 
 if use_tflite:
-    model_path = "brain_tumor_model_quant.tflite"
+    model_path = "brain_tumor_model_compatible.tflite"
     interpreter = tf.lite.Interpreter(model_path=model_path)
     interpreter.allocate_tensors()
     
