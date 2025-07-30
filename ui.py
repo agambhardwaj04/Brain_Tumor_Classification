@@ -2,22 +2,32 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import streamlit as st
-import hugginface_hub
+# import hugginface_hub
 import joblib
 from tensorflow.keras.models import load_model
 model = load_model('brain_tumor_model_crop.h5')
-from huggingface_hub import hf_hub_download
+# from huggingface_hub import hf_hub_download
 from tensorflow.keras.models import load_model
+import tensorflow as tf
 
 
 # Download model
-model_path = hf_hub_download(
-    repo_id="Agam04/brain_tumor",   # Replace with your repo
-    filename="brain_tumor_model.h5"
-)
+# model_path = hf_hub_download(
+#     repo_id="Agam04/brain_tumor",   # Replace with your repo
+#     filename="brain_tumor_model.h5"
+# )
 
-# Load model
-model = load_model(model_path)
+use_tflite = True  # Change to False if you want to use .h5 model
+
+if use_tflite:
+    model_path = "brain_tumor_model_quant.tflite"
+    interpreter = tf.lite.Interpreter(model_path=model_path)
+    interpreter.allocate_tensors()
+    
+    input_details = interpreter.get_input_details()
+    output_details = interpreter.get_output_details()
+else:
+    st.error("Please set use_tflite to True to use the TFLite model.")
 
 st.markdown("""
     <style>
@@ -188,7 +198,13 @@ elif page == "🔍 Detection":
         st.write("Image successfully uploaded!")
 
         with st.spinner("🔄 Processing image... Please wait"):
-            prediction = model.predict(img_array)[0][0]
+            if use_tflite:
+                # Ensure input type matches model
+                interpreter.set_tensor(input_details[0]['index'], img_array.astype(np.float32))
+                interpreter.invoke()
+                prediction = interpreter.get_tensor(output_details[0]['index'])[0][0]
+            else:
+                prediction = model.predict(img_array)[0][0]
 
         # Show prediction result
         if prediction > 0.5:
