@@ -5,6 +5,18 @@ import streamlit as st
 import joblib
 from tensorflow.keras.models import load_model
 model = load_model('brain_tumor_model_crop.h5')
+from huggingface_hub import hf_hub_download
+from tensorflow.keras.models import load_model
+
+# Download model
+model_path = hf_hub_download(
+    repo_id="Agam04/brain_tumor",   # Replace with your repo
+    filename="brain_tumor_model.h5"
+)
+
+# Load model
+model = load_model(model_path)
+
 st.markdown("""
     <style>
     /* Sidebar background */
