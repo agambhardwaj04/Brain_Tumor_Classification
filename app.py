@@ -5,7 +5,6 @@ import streamlit as st
 # import hugginface_hub
 import joblib
 from tensorflow.keras.models import load_model
-model = load_model('brain_tumor_model_crop.h5')
 # from huggingface_hub import hf_hub_download
 from tensorflow.keras.models import load_model
 import tensorflow as tf
