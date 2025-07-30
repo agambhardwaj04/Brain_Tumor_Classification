@@ -4,7 +4,7 @@ from PIL import Image
 import streamlit as st
 import joblib
 from tensorflow.keras.models import load_model
-model = load_model('brain_tumor_model.h5')
+model = load_model('brain_tumor_model_crop.h5')
 st.markdown("""
     <style>
     /* Sidebar background */
