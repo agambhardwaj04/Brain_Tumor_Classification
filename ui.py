@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import streamlit as st
+import hugginface_hub
 import joblib
 from tensorflow.keras.models import load_model
 model = load_model('brain_tumor_model_crop.h5')
