@@ -8,6 +8,7 @@ from tensorflow.keras.models import load_model
 # from huggingface_hub import hf_hub_download
 import tensorflow as tf
 
+st.set_page_config(page_title="Brain Tumor Detection",page_icon="./Images/brain.png" ,layout="wide")
 
 # Download model
 # model_path = hf_hub_download(
@@ -72,7 +73,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Set the app title
-st.set_page_config(page_title="Brain Tumor Detection",page_icon="./Images/brain.png" ,layout="wide")
 
 logo = Image.open("./Images/brain.png")  # Load the logo image
 st.sidebar.image(
